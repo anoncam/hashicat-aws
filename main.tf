@@ -6,7 +6,10 @@ terraform {
     }
   }
 }
-
+module "s3_bucket" {
+  source  = "app.terraform.io/shebash-partner/s3-bucket/aws"
+  version = "2.8.0"
+}    
 provider "aws" {
   region  = var.region
 }
